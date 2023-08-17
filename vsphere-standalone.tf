@@ -47,7 +47,7 @@ resource "vsphere_virtual_machine" "standalone" {
   name             = "${var.vm_name}"
   resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
   datastore_id     = "${data.vsphere_datastore.datastore.id}"
-
+  firmware         = "efi"
   num_cpus = "${var.vm_cpu}"
   memory   = "${var.vm_ram}"
   guest_id = "${data.vsphere_virtual_machine.template.guest_id}"
